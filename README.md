@@ -19,9 +19,10 @@ Create and run an importation command or procedure for loading the wikipedia dat
 ### Solution 2 (Ingestion)
 See `Csv2Parquet.java` for this. Basically, it does these things:
 1. Read the CSV into a DataFrame
-2. Filter out the undesirable rows.
-3. Repartition from 1 partition to 4 partitions.
-4. Write as parquet, partitioning by year,month,day,hour
+1. Figure out the year/month/day/hour from the source file name.
+1. Filter out the undesirable rows.
+1. Repartition from 1 partition to 4 partitions.
+1. Write as parquet, partitioning by year,month,day,hour
 
 <b>BONUS THOUGHTS</b>: I chose a parquet layout that supports arbitrary year,month,day,hours so it should work for any arbitrary hour(s).
 
