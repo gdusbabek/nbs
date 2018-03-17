@@ -1,0 +1,5 @@
+spark-warehouse/*
+target/*
+*.iml
+*.ipr
+*.iws
